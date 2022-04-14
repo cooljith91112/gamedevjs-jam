@@ -55,14 +55,9 @@ animations = [ {
 "name": "idle",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 31 ), ExtResource( 23 ), ExtResource( 40 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 25 ), ExtResource( 41 ) ],
+"frames": [ ExtResource( 27 ), ExtResource( 29 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 19 ) ],
 "loop": true,
-"name": "hit",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 39 ), ExtResource( 42 ), ExtResource( 32 ), ExtResource( 38 ), ExtResource( 35 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 43 ), ExtResource( 21 ), ExtResource( 34 ), ExtResource( 26 ), ExtResource( 36 ) ],
-"loop": true,
-"name": "run",
+"name": "wall_jump",
 "speed": 25.0
 }, {
 "frames": [ ExtResource( 30 ) ],
@@ -70,19 +65,24 @@ animations = [ {
 "name": "fall",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 27 ), ExtResource( 29 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "wall_jump",
+"name": "double_jump",
 "speed": 25.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 23 ), ExtResource( 40 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 25 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "hit",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 28 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 39 ), ExtResource( 42 ), ExtResource( 32 ), ExtResource( 38 ), ExtResource( 35 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 43 ), ExtResource( 21 ), ExtResource( 34 ), ExtResource( 26 ), ExtResource( 36 ) ],
 "loop": true,
-"name": "double_jump",
+"name": "run",
 "speed": 25.0
 } ]
 
@@ -91,6 +91,12 @@ z_index = 1
 script = ExtResource( 44 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, 2 )
 shape = SubResource( 2 )
 
