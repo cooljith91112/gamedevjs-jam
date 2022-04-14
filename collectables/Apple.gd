@@ -6,6 +6,6 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	if body.entity_type=="PLAYER":
+	if (body.name=="Player"):
 		body.health += health
 		queue_free()

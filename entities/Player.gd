@@ -24,7 +24,6 @@ func get_input():
 	if jump and is_on_floor():
 		jumping = true
 		velocity.y = jump_speed
-		print(health)
 	if right:
 		velocity.x += run_speed
 		facing_right = true
