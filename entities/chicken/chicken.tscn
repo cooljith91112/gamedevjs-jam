@@ -41,14 +41,14 @@ animations = [ {
 "name": "idle",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ) ],
-"loop": true,
-"name": "hit",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 23 ), ExtResource( 30 ), ExtResource( 25 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 29 ), ExtResource( 32 ) ],
 "loop": true,
 "name": "run",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "hit",
 "speed": 25.0
 } ]
 
@@ -59,6 +59,8 @@ extents = Vector2( 13, 14.5 )
 extents = Vector2( 13, 14.5 )
 
 [node name="Chicken" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource( 33 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -66,11 +68,15 @@ frames = SubResource( 1 )
 animation = "run"
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite"]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Area2D"]
 position = Vector2( 0, 0.5 )
 shape = SubResource( 3 )
+one_way_collision_margin = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 0.5 )
 shape = SubResource( 2 )
+one_way_collision_margin = 0.0
