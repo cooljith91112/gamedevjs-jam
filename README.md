@@ -1,6 +1,6 @@
 ## Untitled Entry for Gamedev.js 2022 Jam
 
-This game is written in lua and GODOT framework.
+This game is written in GODOT framework.
 
 ### Controls
 ```
